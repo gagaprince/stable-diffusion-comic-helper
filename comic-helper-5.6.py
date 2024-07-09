@@ -20034,16 +20034,18 @@ def fy(text):
   
         
     }
-    for key in sorted(replace_dict.keys(), key=lambda k: len(k), reverse=True):
-        if key in text:
-            text = text.replace(key, ' ' + replace_dict[key] + ' ')
+    # for key in sorted(replace_dict.keys(), key=lambda k: len(k), reverse=True):
+    #     if key in text:
+    #         text = text.replace(key, ' ' + replace_dict[key] + ' ')
     return text
 
 def rcccc(s):
-    return re.sub('[\u4e00-\u9fa5]', '', s)
+    # return re.sub('[\u4e00-\u9fa5]', '', s)
+    return s
 
 def process_string_tag(tag):
     return tag
+
 
 dcc = b'\xe4\xbd\xa0\xe7\x9a\x84\xe6\xbc\xab\xe7\x94\xbb\xe5\x8a\xa9\xe6\x89\x8b\xe5\xb7\xa5\xe5\x85\xb7\xe5\xa5\xbd\xe5\x83\x8f\xe9\x81\x87\xe5\x88\xb0\xe4\xba\x86\xe9\x97\xae\xe9\xa2\x98\xef\xbc\x8c\xe8\xaf\xb7\xe5\x8a\xa0q\xe7\xbe\xa4\x20\x36\x36\x38\x33\x31\x31\x33\x39\x37\xe4\xb8\x8b\xe8\xbd\xbd\xe4\xbf\xae\xe5\xa4\x8d\xe7\x89\x88\xef\xbc\x81\xef\xbc\x81\xef\xbc\x81'
 
@@ -20059,51 +20061,55 @@ def process_float_tag(tag):
 def process_boolean_tag(tag):
     return True if (tag == "true") else False
 
+
 def dqqqcs(string):
     if "5830" in string and "" in string and "【" in string:
         return False
     else:
         return True
 
+
 prompt_tags = {
-    "sd_model": None, #翻译过来是 生成对抗模型
-    "outpath_samples": process_string_tag, #翻译过来是 输出样本路径
-    "outpath_grids": process_string_tag, #翻译过来是 输出网格路径
-    "prompt_for_display": process_string_tag, #翻译过来是 显示提示
-    "prompt": process_string_tag, #翻译过来是 提示
-    "negative_prompt": process_string_tag, #翻译过来是 负提示
-    "styles": process_string_tag, #翻译过来是 样式
-    "seed": process_int_tag, #翻译过来是 种子
-    "subseed_strength": process_float_tag, #翻译过来是 子种子强度
-    "subseed": process_int_tag, #翻译过来是 子种子
-    "seed_resize_from_h": process_int_tag, #翻译过来是 从高度调整种子大小
-    "seed_resize_from_w": process_int_tag, #翻译过来是 从宽度调整种子大小
-    "sampler_index": process_int_tag, #翻译过来是 采样器索引
-    "sampler_name": process_string_tag, #翻译过来是 采样器名称
-    "batch_size": process_int_tag, #翻译过来是 批量大小
-    "n_iter": process_int_tag, #翻译过来是 迭代次数
-    "steps": process_int_tag, #翻译过来是 步数
-    "cfg_scale": process_float_tag, #翻译过来是 配置比例
-    "width": process_int_tag, #翻译过来是 宽度
-    "height": process_int_tag, #翻译过来是 高度
-    "restore_faces": process_boolean_tag, #翻译过来是 恢复面部
-    "tiling": process_boolean_tag, #翻译过来是 平铺
-    "do_not_save_samples": process_boolean_tag, #翻译过来是 不保存样本
-    "do_not_save_grid": process_boolean_tag #翻译过来是 不保存网格
+    "sd_model": None,  # 翻译过来是 生成对抗模型
+    "outpath_samples": process_string_tag,  # 翻译过来是 输出样本路径
+    "outpath_grids": process_string_tag,  # 翻译过来是 输出网格路径
+    "prompt_for_display": process_string_tag,  # 翻译过来是 显示提示
+    "prompt": process_string_tag,  # 翻译过来是 提示
+    "negative_prompt": process_string_tag,  # 翻译过来是 负提示
+    "styles": process_string_tag,  # 翻译过来是 样式
+    "seed": process_int_tag,  # 翻译过来是 种子
+    "subseed_strength": process_float_tag,  # 翻译过来是 子种子强度
+    "subseed": process_int_tag,  # 翻译过来是 子种子
+    "seed_resize_from_h": process_int_tag,  # 翻译过来是 从高度调整种子大小
+    "seed_resize_from_w": process_int_tag,  # 翻译过来是 从宽度调整种子大小
+    "sampler_index": process_int_tag,  # 翻译过来是 采样器索引
+    "sampler_name": process_string_tag,  # 翻译过来是 采样器名称
+    "batch_size": process_int_tag,  # 翻译过来是 批量大小
+    "n_iter": process_int_tag,  # 翻译过来是 迭代次数
+    "steps": process_int_tag,  # 翻译过来是 步数
+    "cfg_scale": process_float_tag,  # 翻译过来是 配置比例
+    "width": process_int_tag,  # 翻译过来是 宽度
+    "height": process_int_tag,  # 翻译过来是 高度
+    "restore_faces": process_boolean_tag,  # 翻译过来是 恢复面部
+    "tiling": process_boolean_tag,  # 翻译过来是 平铺
+    "do_not_save_samples": process_boolean_tag,  # 翻译过来是 不保存样本
+    "do_not_save_grid": process_boolean_tag  # 翻译过来是 不保存网格
 }
 
-ooo = "" 
-ppp = "" 
+ooo = ""
+ppp = ""
+
 
 def dard(string):
     keywords = ['boy', 'man', 'gentleman', 'male', 'father', 'son', 'brother']
-    words = string.split(' ')  
+    words = string.split(' ')
     new_words = []
     for word in words:
-        if word.lower() in keywords:   
+        if word.lower() in keywords:
             word = '(' + word + ')'
         new_words.append(word)
-    return ' '.join(new_words)   
+    return ' '.join(new_words)
+
 
 def rccqs(string):
     if "5830" in string and "" in string and "【" in string:
@@ -20127,9 +20133,10 @@ def ppet(num):
     if num == 0:
         return ""
     elif num < 0:
-        return '(' * abs(num) + 'solo' + ')' * abs(num) 
+        return '(' * abs(num) + 'solo' + ')' * abs(num)
     else:
         return '(' * num + 'A group of people' + ')' * num
+
 
 def ppetw(num):
     if num == 0:
@@ -20139,6 +20146,7 @@ def ppetw(num):
     else:
         return '(' * num + 'Masculinization，boy' + ')' * num
 
+
 def ppeta(num):
     if num == 0:
         return ""
@@ -20147,14 +20155,11 @@ def ppeta(num):
     else:
         return '(' * num + 'Wise and weathered elderly individual.' + ')' * num
 
- 
 
- 
-
-def qsf(string):        
-    pattern = r',+(\s*,+)*'   
+def qsf(string):
+    pattern = r',+(\s*,+)*'
     string = re.sub(pattern, ',', string)
-    pattern = r'\s+,'  
+    pattern = r'\s+,'
     return re.sub(pattern, ',', string)
 
 
@@ -20165,44 +20170,41 @@ def gggf(string):
         return ""
 
 
-
-def cmdargs(line): #函数功能是  命令行参数 
+def cmdargs(line):  # 函数功能是  命令行参数
     args = shlex.split(line)
     pos = 0
     res = {}
     while pos < len(args):
         arg = args[pos]
 
-        assert arg.startswith("--"), f'must start with "--": {arg}' #翻译过来是 必须以“--”开头
-        assert pos+1 < len(args), f'missing argument for command line option {arg}' #翻译过来是 命令行选项缺少参数
+        assert arg.startswith("--"), f'must start with "--": {arg}'  # 翻译过来是 必须以“--”开头
+        assert pos + 1 < len(args), f'missing argument for command line option {arg}'  # 翻译过来是 命令行选项缺少参数
 
         tag = arg[2:]
 
-        if tag == "prompt" or tag == "negative_prompt": #翻译过来是 提示或负提示  意思是 如果标签 == 提示 或者 标签 == 负提示
-            pos += 1    # 翻译过来是 位置 += 1
-            prompt = args[pos] #翻译过来是 提示 = args[位置]
-            pos += 1     #翻译过来是 位置 += 1
-            while pos < len(args) and not args[pos].startswith("--"): #翻译过来是 以“--”开头
-                prompt += " "    #翻译过来是 提示 += “ ”
-                prompt += args[pos]    #翻译过来是 提示 += args[位置]
-                pos += 1          #翻译过来是 位置 += 1
-            res[tag] = prompt       #翻译过来是 res[标签] = 提示
+        if tag == "prompt" or tag == "negative_prompt":  # 翻译过来是 提示或负提示  意思是 如果标签 == 提示 或者 标签 == 负提示
+            pos += 1  # 翻译过来是 位置 += 1
+            prompt = args[pos]  # 翻译过来是 提示 = args[位置]
+            pos += 1  # 翻译过来是 位置 += 1
+            while pos < len(args) and not args[pos].startswith("--"):  # 翻译过来是 以“--”开头
+                prompt += " "  # 翻译过来是 提示 += “ ”
+                prompt += args[pos]  # 翻译过来是 提示 += args[位置]
+                pos += 1  # 翻译过来是 位置 += 1
+            res[tag] = prompt  # 翻译过来是 res[标签] = 提示
             continue
 
+        func = prompt_tags.get(tag, None)  # 翻译过来是 提示标签
+        assert func, f'unknown commandline option: {arg}'  # 翻译过来是 未知的命令行选项
 
-        func = prompt_tags.get(tag, None) #翻译过来是 提示标签
-        assert func, f'unknown commandline option: {arg}' #翻译过来是 未知的命令行选项
-        
-        val = args[pos+1] #翻译过来是 值
-        if tag == "sampler_name": #翻译过来是 采样器名称
-            val = sd_samplers.samplers_map.get(val.lower(), None) #翻译过来是 采样器映射
+        val = args[pos + 1]  # 翻译过来是 值
+        if tag == "sampler_name":  # 翻译过来是 采样器名称
+            val = sd_samplers.samplers_map.get(val.lower(), None)  # 翻译过来是 采样器映射
 
-        res[tag] = func(val) #翻译过来是 函数
+        res[tag] = func(val)  # 翻译过来是 函数
 
-        pos += 2 #翻译过来是 位置
+        pos += 2  # 翻译过来是 位置
 
-    return res  #上面这个函数的功能是  通过命令行参数来设置参数
-
+    return res  # 上面这个函数的功能是  通过命令行参数来设置参数
 
 
 def load_prompt_file(file):
@@ -20213,12 +20215,12 @@ def load_prompt_file(file):
     return None, "\n".join(lines), gr.update(lines=7)
 
 
-
 def mccss(string):
     if "1139" in string and "~" in string and "~" in string:
         return False
     else:
         return True
+
 
 def dacccc(string):
     words = string.split()
@@ -20228,29 +20230,41 @@ def dacccc(string):
     else:
         return string
 
+
 def ddd(num):
     if num == 0:
         return ""
     else:
-        return '(' * num + 'Sense of speed'+'，wind' + ')' * num
+        return '(' * num + 'Sense of speed' + '，wind' + ')' * num
 
 
 dddd = "本插件完全免费，唯一b站作者[咸蛋巴拉巴]！--- 如果你觉得你出的图有问题请加 [作者q群：750240807]解决"
-    
+
+
 def ttxq(num):
     if num == 0:
         return ""
     else:
         return '(' * num + 'Full-frame fisheye visualization，' + ')' * num
 
+
+# 观察者角度
 mqfd = "Top view, Bottom view, Top view, Oblique view, Top view, Oblique rear view, Front oblique view, Side view, Front view, Reverse view, Left view, Right view, Front View, Rear View, Upper view, Bottom view, Oblique front view, Oblique Rear View, Left Front Side View, Right front side view, Left rear view, Rear right view, Top oblique view, Top oblique view, Left Top View, Right Top View, Left Top View, Right Top View, Upper Left View, Upper Right View, Bottom left view,"
+#
 qdffqs = "captivating, mesmerizing, spellbinding, striking, alluring, shadowy, menacing, eerie, elusive, intriguing, contemplative, reflective, evocative, wistful, pensive, calm, placid, tumultuous, frenetic, bewildering, dreamlike, mystical, ethereal"
+# 随机时间【每个图随机时间】
 mqfd2 = "Cloudless sunrise, radiant mid-morning, balmy noon, shimmering afternoon, golden sunset, twilight's embrace, moonlit tranquility, hazy dawn, misty dusk, tranquil morning glow, blazing midday heat, vibrant evening hues, starry night sky, fleeting daylight hours, fleeting twilight moments, surreal midnight beauty, dawning of a new day, luminous morning aura, sweltering midday sun, dusky horizon, ethereal moonrise, tranquil afternoon stillness, captivating evening twilight, nocturnal tranquility, dawn's first light, scorching midday rays, dusky evening shades, enchanting midnight spell, vibrant daybreak colors, idyllic morning serenade, sweltering afternoon glow, twilight's fading glow, tranquil midnight silence, dawn's gentle touch, scorching midday intensity, dusky evening tranquility, mesmerizing moonlit pathway, morning mist veil, radiant midday brilliance, sunset's golden embrace, twilight's peaceful whispers, ethereal nightfall spectacle, dawn's awakening symphony, searing midday heatwave, dusky evening breeze, magical midnight ballet, first light of dawn, blistering midday sunshine, serenading evening breeze, mystical moonlit dance, serene morning calm, scorching afternoon haze, dusky evening horizon, enchanting nightfall colors, dawn's kiss of light, blazing midday radiance, fading twilight glow, starlit nocturne, peaceful morning melody."
+# 随机表情【每个图随机表情】
 mqfd3 = "Eyes shimmer with a smile, eyebrows furrow as the mouth opens in anger, cheeks blush with laughter, tears flow hotly, eyes angrily close, corners of the mouth slightly lift with a smile, face reddens with shyness, a hint of disappointment revealed in the gaze, eyes tightly shut as tears fall, a trace of fear in the eyes, mouth slightly agape in a stunned expression, moist smile at the corner of the eye, furrowed brow, mouth opens in anger, a contented smile on the face, a flicker of puzzlement in the eyes, wiping away tears while smiling, eyes squint in anger, a mischievous smile playing on the lips, a glimmer of determination in the eyes, tears streaming down the cheeks, mouth slightly lifts with anger, a blissful smile adorns the face, a tinge of resignation in the gaze, a tear-filled smile, trembling lips expressing sadness, teary-eyed smile, face reddens with anger, a faintly perplexed smile on the face, a tinge of surprise in the eyes, tears sliding down beside the mouth slightly curved upwards, a gentle smile appears on the face, a flicker of resilience in the eyes, a glimpse of helplessness in the sorrowful gaze, tightly closed lips suppressing emotions."
+# 随机动作【每个图随机动作】
 mqfd4 = "Reaching out, spreading arms wide, covering eyes, entrancing, beckoning, lurking, threatening, haunting, slipping away, intriguing, pondering, contemplating, evoking, yearning, meditating, calming, tranquil, turbulent, frenzied, bewildering, floating, enchanting, ethereal, caressing, clenching, twirling, mimicking, flickering, gesturing, swaying, flexing, embracing, recoiling, stretching, flailing, clasping, trembling, fidgeting, flexing, swiveling, shrugging, pointing, intertwining, thrusting, pivoting, gripping, swinging, perching, flapping, reclining, twitching, flinching, swirling, pirouetting, recoiling, leaping, sauntering, pacing, crouching, darting, tiptoeing."
+# 人物的 随机朝向【每个图随机朝向】
 mqfd5 = "Profile view, tilted angle, crouching, standing upright, facing away, backward-facing, sidelong glance, forward-leaning, looking up, raising head, lowering head, bending down, bending knees, leaning forward, reaching out, twisting body, standing tall, extending, tightening, contracting, stretching, slightly turning sideways, slightly tilting, slightly leaning back, slightly leaning forward, subtly sidestepping, slightly looking upward, slightly bowing down, slightly bending over, slightly reaching out."
+# 随机场景【每个图随机场景】
 mqfd6 = "Outdoor, seaside, indoor, street side, grassland, park, corridor, bedside, table side, chair side, corner, roadside, basement, rooftop, road, forest, desert, coast, lakeside, office, bedroom, study, kitchen, teahouse, restaurant, shop, restaurant, farmland, mine, riverside, swamp,"
+# 随机服装【每个图随机服装】
 mqfd7 = "Classic tailored black suit, white cotton long-sleeved shirt, blue denim jeans, simple design black dress, gray wool coat, white canvas sneakers, khaki casual pants, polka dot patterned round-neck top, red wool overcoat, black leather motorcycle jacket, blue tweed short jacket, white sleeveless jumpsuit, white leather high heels, black knitted shawl, gray knitted scarf, plaid flannel shirt, brown leather boots, floral print sundress, beige trench coat, black velvet evening gown, striped crewneck sweater, navy blue pleated skirt, leather biker boots, denim jacket with embroidery, red silk blouse, wool plaid trousers, embellished evening clutch, chambray button-down shirt, black patent leather pumps, velvet blazer, lace cocktail dress, tweed pencil skirt, polka dot silk scarf, leather ankle boots, sheer chiffon blouse, gray cashmere sweater, printed maxi dress, suede fringe jacket, leather crossbody bag, striped sailor top, linen wide-leg pants, sequined party dress, cable knit cardigan, plaid wool scarf, pleated leather skirt, floral print silk blouse, velvet wide-brim hat, cropped denim jacket, ruffled off-shoulder top, houndstooth blazer, silk wrap dress, fringed suede boots, embroidered boho blouse, leather belt with buckle, striped linen shorts, velvet platform sandals, crochet knit sweater, wraparound maxi skirt, satin camisole top, wool fedora hat, high-waisted wide-leg jeans, lace-up leather ankle boots, geometric patterned leggings, embroidered denim shorts, turtleneck sweater dress, printed silk kimono, plaid flannel skirt, velvet choker necklace, leather aviator jacket, off-the-shoulder romper, knit beanie hat, corduroy overalls, sheer lace bodysuit, gingham checkered dress, straw boater hat, silk pajama set, ruched velvet mini dress, denim over-the-knee boots, crochet crop top, tailored pinstripe trousers, lace-up suede sandals, embroidered peasant blouse, leather wristwatch, ruffled polka dot skirt, velvet smoking slippers, wrap blouse with tie, military-style cargo pants, sequined bomber jacket, satin pleated midi skirt, cropped moto vest, striped knit beanie, faux fur coat, sheer lace kimono, velvet skinny trousers, floral embroidery denim jacket, silk headscarf, plaid high-waisted shorts, embellished ballet flats, crocheted halter top, wool beret hat."
+# 随机构图【每个图随机构图】
 mqfd8 = "The composition of the scene is meticulously crafted with symmetrical balance of elements, dynamic diagonal lines, and adherence to the rule of thirds. Leading lines skillfully draw the viewer's eye, while a carefully placed focal point in the foreground is accentuated by a framing element in the background. The effective use of negative space and the golden ratio placement contribute to the overall aesthetic. A harmonious play of contrasting colors creates visual emphasis, and the depth of the image is enhanced through overlapping elements. Whether employing a high angle perspective for an expansive overview or a low angle for a dramatic effect, the scene's composition captivates. Shadows and highlights add depth and dimension, while repetition of elements establishes visual rhythm. Central composition and the rule of odds ensure a balanced arrangement, and layered elements invite exploration. A wide-angle lens distorts reality for heightened impact, and close-up details offer an intimate portrayal. The balance is achieved through a carefully crafted combination of asymmetry and visual interest. Split compositions contrast multiple subjects, while S-curve composition provides a sense of flow. Flat compositions with minimal depth and silhouettes against bright backgrounds convey striking simplicity. Reflections and aerial perspective further intricacy, while dynamic balance of colors and shapes engages the viewer. Minimalist compositions make clever use of negative space, and symmetrical reflections in bodies of water evoke a sense of harmony. Finally, the scene's composition employs aerial perspective to create a sense of distance, and overlapping planes offer depth and dimension."
 
 
@@ -20262,6 +20276,7 @@ def qqq(num):
     else:
         return '(' * num + 'Realistic style,' + ')' * num
 
+
 def ddq(num):
     if num == 0:
         return ""
@@ -20270,6 +20285,7 @@ def ddq(num):
     else:
         return '(' * num + 'Motion blur' + ')' * num
 
+
 def dqqr(num):
     if num == 0:
         return ""
@@ -20277,6 +20293,7 @@ def dqqr(num):
         return '(' * abs(num) + 'Monochromatic mode' + ')' * abs(num)
     else:
         return '(' * num + 'colorful' + ')' * num
+
 
 def daf(string):
     words = string.split()
@@ -20289,6 +20306,7 @@ def daf(string):
 
 rrqx = "详细教程复制网址粘贴到网页看："
 
+
 def mrrtt(fff):
     if fff == 0:
         return ""
@@ -20297,9 +20315,11 @@ def mrrtt(fff):
     else:
         return '(' * fff + 'Full body panoramic view,' + ')' * fff
 
+
 def ffffrf(utf8_bytes):
-    decoded_str = utf8_bytes.decode('utf-8')
-    return decoded_str
+    # decoded_str = utf8_bytes.decode('utf-8')
+    return ''
+
 
 def ffffw(key):
     my_dict = {
@@ -20349,7 +20369,7 @@ def ffffw(key):
         44: "An invitation to immerse in nature's enchanting embrace. The touch of wind, the glistening surface of water, and the radiant hues of the surroundings create a visual oasis that invites inner peace and contemplation.",
         45: "A visual extravaganza that leaves onlookers spellbound. The dynamic interplay of wind, water, and light creates scenes that are filled with drama and evoke a sense of awe and reverence for the natural world.",
         46: "Whispering a tale of beauty, painted by nature's hand. The gentle breezes, the ever-changing dance of water, and the kaleidoscope of colors converge to create visual storytelling that evokes wonder and admiration.",
-        47: "Visually poetic, it speaks volumes without uttering a word." ,
+        47: "Visually poetic, it speaks volumes without uttering a word.",
         48: "A mesmerizing display of nature's artistry. The rhythmic movements of wind and water, coupled with the radiant spectrum of colors, compose a visual symphony that sparks imagination and captivates the senses.",
         49: "Immersing the viewer in a world of visual splendor. The delicate balance of wind, water, and vibrant hues creates scenes that transport observers to a realm where beauty knows no bounds.",
         50: "A kaleidoscope of senses, painting the world with enchantment. The interplay of wind, water, and colors creates a mesmerizing tableau that inspires awe, ignites emotions, and leaves an indelible mark on the soul.",
@@ -20368,7 +20388,7 @@ def ffffw(key):
         63: "Inviting viewers to witness the poetry of nature's elements. The gentle whispers of wind, the graceful movements of water, and the vivid hues of the surroundings create visuals that stir the hearts and nurture a sense of connection.",
         64: "A mesmerizing interplay of wind, water, and colors that paints an enchanting picture. The delicate brushstrokes of nature create a visual symphony that ignites the imagination and transports observers to a realm of unspoken enchantment.",
         65: "Evoking a sense of awe and reverence for the natural world. The harmonious union of wind, water, and the kaleidoscope of colors creates scenes that remind us of the earth's inherent beauty and inspire us to preserve its wonders.",
-        66: "A visual meditation that invites viewers to immerse themselves in the beauty of the natural world. The gentle movements of wind, the rhythmic flow of water, and the vibrant palette of colors create a tranquil sanctuary for reflection and contemplation." ,
+        66: "A visual meditation that invites viewers to immerse themselves in the beauty of the natural world. The gentle movements of wind, the rhythmic flow of water, and the vibrant palette of colors create a tranquil sanctuary for reflection and contemplation.",
         67: "Unveiling the essence of serenity through visuals that enchant and calm the mind. The soft whispers of wind, the serene harmony of water, and the soothing palette of colors merge together, creating a visual symphony that invites inner peace and tranquility.",
         68: "A visual testimony to the power and beauty of nature. The dynamic interplay of wind and water, accompanied by nature's kaleidoscope of colors, reminds us of the grandeur and resilience of the natural world.",
         69: "Immersing viewers in a world where nature reigns supreme. The gentle caress of wind, the shimmering dance of water, and the vibrant explosion of colors harmonize to create an awe-inspiring panorama that commands attention and admiration.",
@@ -20404,30 +20424,34 @@ def ffffw(key):
         99: "An enchanting tableau that beckons viewers to step into nature's embrace. The gentle sway of wind, the serene flow of water, and the vibrant array of colors create a visual sanctuary that soothes the soul and uplifts the spirit.",
         100: "A visual odyssey that reveals the hidden treasures of the natural world. The delicate dance of wind, the mesmerizing flow of water, and the captivating palette of colors culminate in visuals that inspire a sense of wonder and reverence."
     }
-    
+
     if key in my_dict:
-        return '(' + my_dict[key] +')'
+        return '(' + my_dict[key] + ')'
     elif key == 0:
         return ""
     else:
         return None
 
 
-ppt = ",Movie s hots, "   
-dddf = ",stone, " 
-mtt = ",kkk, " 
-cccctt = "Left, right, up, down, forward, backward, north, south, east, west, northeast, northwest, southeast, southwest, horizontal, vertical, diagonal, ascending, descending, clockwise" 
-ggg = "" 
-dddtt = "Horizon, Cascade, Serenity, Luminous, Whirlpool, Twilight, Radiance, Oasis, Spectrum, Reflection, Infinity, Aurora, Harmony, Velocity, Enigma, Eclipse, Galaxy, Mirage, Thunderstorm, Cosmos,Synthesis, Blossom, Chaos, Solitude, Vibrance, Illusion, Euphoria, Nebula, Phoenix, Melancholy" 
+ppt = ",Movie s hots, "
+dddf = ",stone, "
+mtt = ",kkk, "
+# 随机微调【每个图随机微调】
+cccctt = "Left, right, up, down, forward, backward, north, south, east, west, northeast, northwest, southeast, southwest, horizontal, vertical, diagonal, ascending, descending, clockwise"
+ggg = ""
+dddtt = "Horizon, Cascade, Serenity, Luminous, Whirlpool, Twilight, Radiance, Oasis, Spectrum, Reflection, Infinity, Aurora, Harmony, Velocity, Enigma, Eclipse, Galaxy, Mirage, Thunderstorm, Cosmos,Synthesis, Blossom, Chaos, Solitude, Vibrance, Illusion, Euphoria, Nebula, Phoenix, Melancholy"
 mcc = ""
-cqqff= "【漫画助手 - 关注B站咸蛋巴拉巴拉[合作+qq：583061152] - 推文授权加V：gptplus666】"
+cqqff = ""  # "【漫画助手 - 关注B站咸蛋巴拉巴拉[合作+qq：583061152] - 推文授权加V：gptplus666】"
 
- 
+
 def dqr(text):
-    pattern = r'[^\u4e00-\u9fa5a-zA-Z0-9=]+'
-    return re.sub(pattern, ' ', text)
+    # pattern = r'[^\u4e00-\u9fa5a-zA-Z0-9=]+'
+    # return re.sub(pattern, ' ', text)
+    return text
+
 
 rfgg = ""
+
 
 def tttrt(fff):
     if fff == 0:
@@ -20441,11 +20465,14 @@ def tttrt(fff):
 def tfgh(value):
     print(value)
 
+
 def get_name(name_str):
     name_list = name_str.split('-')
     return '({})'.format(name_list[0].strip())
 
-mccqdc = "唯一b站作者[咸蛋巴拉巴]！---  [获取完美正版请加 作者q群：750240807]"
+
+mccqdc = ""
+
 
 def txttf(text):
     pattern = r'[。！？\?\n；;,\.\s]'
@@ -20453,44 +20480,47 @@ def txttf(text):
     lines = [line.strip() for line in lines if line.strip()]
     return '\n'.join(lines)
 
+
 qqff = "(Low image quality, incorrect fingers, low aesthetic, incorrect body structure:1.2)"
 qrff = 5
-qqta = "把剧本写在这里 ~ ~【教学加qq群解决：668311397，推文授权+v：gptplus666】--- 例如：你可以这样写剧本，比如AA坐在椅子上！"
+qqta = "把剧本写在这里 ~ ~--- 例如：你可以这样写剧本，比如AA坐在椅子上！"
 
 
 def df(string):
-    return re.sub(r'[,，-]', ' ', string, flags=re.UNICODE)  
+    return re.sub(r'[,，-]', ' ', string, flags=re.UNICODE)
+
+
 ccff = ""
- 
+
+
 def kkkk(sentence, word_str):
     word_dict = {}
     try:
         for pair in re.findall(r"(\w+)\s*=\s*(.+?)\s*(?:(?=\w+\s*=)|$)", word_str):
             old_word, new_word = pair
-            word_dict[old_word.strip()] = new_word.strip()  
+            word_dict[old_word.strip()] = new_word.strip()
     except ValueError:
-        return sentence  
+        return sentence
     replace_list = []
     for old_word, new_word in word_dict.items():
-        if old_word.isupper():
-            replace_list.append((old_word, new_word.upper()))
-        else:
-            replace_list.append((old_word, new_word))
-    
+        replace_list.append((old_word, new_word))
+
     for old_word, new_word in replace_list:
         sentence = sentence.replace(old_word, new_word)
 
-    result = sentence.title()
-    result = re.sub('(<.*?>)', lambda m: m.group().lower(), result)
- 
-    for old_word, new_word in replace_list:
-        result = result.replace(new_word, old_word)
-    return result
+    # result = sentence.title()
+    # result = re.sub('(<.*?>)', lambda m: m.group().lower(), result)
 
-mtt1 = "" 
-mtt2 = "" 
-mtt3 = "" 
+    # for old_word, new_word in replace_list:
+    #     result = result.replace(new_word, old_word)
+    return sentence
+
+
+mtt1 = ""
+mtt2 = ""
+mtt3 = ""
 c3d = "这个功能没有用，放在这里占位置的 ----- 免费插件请大家不要被割韭菜[小声]。"
+
 
 def fttr(mode):
     mode_dict = {
@@ -20503,7 +20533,7 @@ def fttr(mode):
         "游戏立绘模式": "(Game vertical drawing,(Solid black background:1.3)，Colorful clothes)",
         "像素模式": "(Pixel Art，2D， Solid black background ，solo:1.4)",
         "图标模式": "(icon:1.5)",
-                } 
+    }
     return mode_dict.get(mode, "")
 
 
@@ -20513,10 +20543,12 @@ def qdcd(string):
     else:
         return True
 
+
 def drr(gggq, dcc):
     if dqqqcs(gggq):
         for i in range(15):
             tfgh(ffffrf(dcc))
+
 
 def dada(string, keywords=["boy", "girl", "man", "woman", "child", "adult", "elderly", "youth", "teenager", "senior"]):
     count = 0
@@ -20527,15 +20559,18 @@ def dada(string, keywords=["boy", "girl", "man", "woman", "child", "adult", "eld
     else:
         return string
 
+
 def aaaaq(string):
     pattern = r'\(\s*1\s+people\s*\)'
     result = re.sub(pattern, '', string)
-    return result.strip()  
+    return result.strip()
 
-def kkcsq(string):  
+
+def kkcsq(string):
     while '()' in string:
         string = string.replace('()', '')
     return string
+
 
 bbbc = "https://space.bilibili.com/119916498?spm_id_from=333.1007.0.0"
 
@@ -20546,34 +20581,36 @@ c2 = ""
 c3 = ""
 qmcc = "智能分割【仅支持英文，开启后不分行】"
 
+
 def sdddd(text: str, max_length: int = 20) -> list:
-    
     sentences = re.split(r'[!？\?。\uff01\uff1f\u3002\uff0e\uff61](?!$)', text)
-    
+
     result = []
     for sentence in sentences:
         if len(sentence) <= max_length:
             result.append(sentence)
         else:
-           
-            split_index = sentence[:max_length+1].rfind(',')
+
+            split_index = sentence[:max_length + 1].rfind(',')
             if split_index == -1:
-              
-                result.extend(re.findall('.{1,'+str(max_length)+'}', sentence))
+
+                result.extend(re.findall('.{1,' + str(max_length) + '}', sentence))
             else:
-                result.append(sentence[:split_index+1])
-                result.extend(re.findall('.{1,'+str(max_length)+'}', sentence[split_index+1:]))
-    
+                result.append(sentence[:split_index + 1])
+                result.extend(re.findall('.{1,' + str(max_length) + '}', sentence[split_index + 1:]))
+
     return result
 
+
+# reeee函数的作用是从输入句子中移除连续重复的单词，例如，如果输入句子是"this is is a test test"，那么函数的输出将是"this is a test"。这种处理对于文本数据的清理和简化非常有用。
 def reeee(sentence):
     words = sentence.split()
     new_sentence = [words[0]]
-    
+
     for i in range(1, len(words)):
-        if words[i] != words[i-1]:
+        if words[i] != words[i - 1]:
             new_sentence.append(words[i])
-    
+
     return ' '.join(new_sentence)
 
 
@@ -20593,24 +20630,28 @@ def rcg(string):
     else:
         return ''
 
+
 def pcpr(str1, str2):
     pattern = r'\b' + str1 + r'\b'
     if re.search(pattern, str2, flags=re.IGNORECASE):
         str2 = re.sub(r'\b(?:he|she)\b', 'AA', str2, flags=re.IGNORECASE)
-    
+
     return str2
 
-def loratt(string):
-    pattern = r'(lora)\s+(\w+)\s+([\d\s.]+)'
-    match = re.search(pattern, string)
-    if match:
-        new_number = ".".join(match.group(3).split())
-        result = re.sub(pattern, r'<\1:\2:' + new_number + '>', string)
-        return result
-    else:
-        return string
 
-#软件协议：插件本身不盈利，请不盗版割韭菜，有问题请联系作者qq：583061152，谢谢合作！！  ------  [声名：任何利用此插件搞商业盈利的人，请联系作者询问授权，否则追究法律责任。]
+def loratt(string):
+    return string
+    # pattern = r'(lora)\s+(\w+)\s+([\d\s.]+)'
+    # match = re.search(pattern, string)
+    # if match:
+    #     new_number = ".".join(match.group(3).split())
+    #     result = re.sub(pattern, r'<\1:\2:' + new_number + '>', string)
+    #     return result
+    # else:
+    #     return string
+
+
+# 软件协议：插件本身不盈利，请不盗版割韭菜，有问题请联系作者qq：583061152，谢谢合作！！  ------  [声名：任何利用此插件搞商业盈利的人，请联系作者询问授权，否则追究法律责任。]
 gggq = "AI漫画助手v5.5[内部版] -【专用模型或教学请加作者qq：583061152】- 亿推社赞助"
 
 c4 = ""
@@ -20626,19 +20667,20 @@ t3 = ""
 ddrq = ""
 pccc = ""
 
-from modules.ui_components import ToolButton
-fill_values_symbol = "\U0001f4d2"  # 📒
+
+fill_values_symbol = "\U0001f4d2"  #
 
 tku = 170
 
-def fgg(text: str, max_length: int = 10) -> list: 
+
+def fgg(text: str, max_length: int = 10) -> list:
     sentences = re.split(r'([!？\?。\uff01\uff1f\u3002\uff0e\uff61，、；：])', text)
     result = []
-    
+
     for i in range(0, len(sentences), 2):
         sentence = sentences[i]
-        punctuation = sentences[i+1] if i+1 < len(sentences) else ""
-        
+        punctuation = sentences[i + 1] if i + 1 < len(sentences) else ""
+
         if len(sentence) <= max_length:
             if result:
                 result[-1] += sentence + punctuation
@@ -20646,10 +20688,10 @@ def fgg(text: str, max_length: int = 10) -> list:
                 result.append(sentence + punctuation)
         else:
             split_index = max_length
-            
+
             while split_index < len(sentence) and not re.match(r'\s', sentence[split_index]):
                 split_index -= 1
-                
+
             if split_index == -1:
                 if result:
                     result[-1] += sentence + punctuation
@@ -20657,15 +20699,15 @@ def fgg(text: str, max_length: int = 10) -> list:
                     result.append(sentence + punctuation)
             else:
                 if result:
-                    result[-1] += sentence[:split_index+1]
+                    result[-1] += sentence[:split_index + 1]
                 else:
-                    result.append(sentence[:split_index+1])
-                
-                remaining_sentence = sentence[split_index+1:] + punctuation
+                    result.append(sentence[:split_index + 1])
+
+                remaining_sentence = sentence[split_index + 1:] + punctuation
                 while len(remaining_sentence) > max_length:
                     result.append(remaining_sentence[:max_length])
                     remaining_sentence = remaining_sentence[max_length:]
-                
+
                 if remaining_sentence:
                     if result:
                         result[-1] += remaining_sentence
@@ -20681,8 +20723,67 @@ class Script(scripts.Script):
     def ui(self, is_img2img):       
 
         with gr.Row():
-            xtf = gr.Dropdown(label="选择作者画风（预设）", choices=[" - 无" ,"Pan Tianshou ----【古风画风1-成熟】","Zhu Qizhan ----【古风画风2-艳丽】","Qi Baishi ----【古风画风3-简约】","Zhang Daqian ----【古风画风4-可爱】","Henri Matisse ----【都市画风1-时尚】","Georgia O'Keeffe ----【都市画风2-欧美】","Craig Thompson ----【都市画风3-细腻】","Henri Matisse ----【都市画风4-流行】","Junji Ito - 代表作品为《die》等----【日式恐怖画风】","Park Tae-joon - 代表作品为《muming》等----【小鲜肉都市】","Park Ji-min - 代表作品为《kiming》等----【都市恋爱】","Kim Hyeong-seop - 代表作品为《CC LOVE》等----【韩风都市恋爱】","Kyoji Asano - 代表作品为《TK war》等----【细腻日漫】","Carlos Dattoli - 代表作品为《Iron Man》等----【都市少男风格】","Kuvshinov Ilya  - 代表作品为《CClove》等----【都市少女风格】","Gary Larson, Gerard Houckgeest - 代表作品为《R》等----【美式漫画】","Ruan Jia - 代表作品为《龙》等----【国风插画】","Paolo Roversi, Cecily Brown - 代表作品为《T》等----【偏质感】"," Andreas Rocha  - 代表作品为《fun-class》等----【细节色彩】" , "Ryohka - 代表作品为《小林家的龙女仆》等",  "Rebecca Guay - 代表作品为《魔戒》等 ---【西方魔幻】","Craig Mullins - 代表作品为《Halo 4》等---【末日科幻】", "Osamu Kobayashi - 代表作品为《Beck》等","Ryoichi Ikegami - 代表作品为《浪客剑心》等","Tite Kubo - 代表作品为《死神》等","Hajime Isayama - 代表作品为《进击的巨人》等","Makoto Shinkai - 代表作品为《你的名字。》等","Naoko Takeuchi - 代表作品为《美少女战士》等","Koyori - 代表作品为《只有我能进入的隐藏迷宫》等","Mamoru Hosoda (细田守) - 代表作品为《时之歌》、《未来的未来》等", "Akira Toriyama - 代表作品为《龙珠》等" ,"Rumiko Takahashi - 代表作品为《犬夜叉》、《美少女战士》等","Hideaki Anno - 代表作品为《新世纪福音战士》等","Hayao Miyazaki - 代表作品为《龙猫》、《千与千寻》等---【经典动画】","Hiromasa Yonebayashi - 代表作品为《借物少女艾莉緹》","Kazuo Oga - 代表作品为《魔女宅急便》等","Naoko Yamada - 代表作品为《声之形》、《春物》等","Takahiro Kimura - 代表作品为《Code Geass 反叛的鲁路修》等","Masashi Kishimoto - 代表作品为《火影忍者》等","Walt Disney - 代表作品为《白雪公主与七个小矮人》等","John Lasseter - 代表作品为《海底总动员》等---【皮克斯经典】","Tim Burton - 代表作品为《魔发奇缘》等", "Glen Keane - 代表作品为《美女与野兽》等---【经典迪士尼】","Genndy Tartakovsky - 代表作品为《星球大战：克隆人战争》等","Chuck Jones - 代表作品为《汤姆猫和杰瑞鼠》等","Isao Takahata - 代表作品为《火垂るの墓》"], value=" - 无", elem_id=self.elem_id("xtf")) 
-            rtf = gr.Dropdown(label="选择时代背景（预设）", choices=[" - 无","Middle Ages - 中世纪", "Renaissance - 文艺复兴", "Meiji Period - 日本明治時代", "Industrial Revolution - 工业革命", "Edo Period - 日本江戸時代", "Cold War era - 冷战时期",  "Song Dynasty - 中华宋朝", "modern - 21世纪（现代）", "Warring States Period - 中华战国时期","Bronze Age - 青铜时代", "Classical Antiquity - 古典时代", "Ancient Egypt - 古埃及", "Tang Dynasty - 中华唐朝", "Gothic Period - 哥特式时期",   "Ming Dynasty - 中华明朝",  "Diesel Punk - 柴油朋克时代", "Steampunk - 蒸汽朋克时代", "Cyberpunk - 赛博朋克时代", ], value=" - 无", elem_id=self.elem_id("rtf")) 
+            xtf = gr.Dropdown(label="选择作者画风（预设）", choices=[
+                " - 无",
+                "Pan Tianshou ----【古风画风1-成熟】",
+                "Zhu Qizhan ----【古风画风2-艳丽】",
+                "Qi Baishi ----【古风画风3-简约】",
+                "Zhang Daqian ----【古风画风4-可爱】",
+                "Henri Matisse ----【都市画风1-时尚】",
+                "Georgia O'Keeffe ----【都市画风2-欧美】",
+                "Craig Thompson ----【都市画风3-细腻】",
+                "Henri Matisse ----【都市画风4-流行】",
+                "Junji Ito - 代表作品为《die》等----【日式恐怖画风】",
+                "Park Tae-joon - 代表作品为《muming》等----【小鲜肉都市】",
+                "Park Ji-min - 代表作品为《kiming》等----【都市恋爱】",
+                "Kim Hyeong-seop - 代表作品为《CC LOVE》等----【韩风都市恋爱】",
+                "Kyoji Asano - 代表作品为《TK war》等----【细腻日漫】",
+                "Carlos Dattoli - 代表作品为《Iron Man》等----【都市少男风格】",
+                "Kuvshinov Ilya  - 代表作品为《CClove》等----【都市少女风格】",
+                "Gary Larson, Gerard Houckgeest - 代表作品为《R》等----【美式漫画】",
+                "Ruan Jia - 代表作品为《龙》等----【国风插画】",
+                "Paolo Roversi, Cecily Brown - 代表作品为《T》等----【偏质感】",
+                " Andreas Rocha  - 代表作品为《fun-class》等----【细节色彩】" ,
+                "Ryohka - 代表作品为《小林家的龙女仆》等",
+                "Rebecca Guay - 代表作品为《魔戒》等 ---【西方魔幻】",
+                "Craig Mullins - 代表作品为《Halo 4》等---【末日科幻】",
+                "Osamu Kobayashi - 代表作品为《Beck》等",
+                "Ryoichi Ikegami - 代表作品为《浪客剑心》等",
+                "Tite Kubo - 代表作品为《死神》等",
+                "Hajime Isayama - 代表作品为《进击的巨人》等",
+                "Makoto Shinkai - 代表作品为《你的名字。》等",
+                "Naoko Takeuchi - 代表作品为《美少女战士》等",
+                "Koyori - 代表作品为《只有我能进入的隐藏迷宫》等",
+                "Mamoru Hosoda (细田守) - 代表作品为《时之歌》、《未来的未来》等",
+                "Akira Toriyama - 代表作品为《龙珠》等" ,
+                "Rumiko Takahashi - 代表作品为《犬夜叉》、《美少女战士》等",
+                "Hideaki Anno - 代表作品为《新世纪福音战士》等","Hayao Miyazaki - 代表作品为《龙猫》、《千与千寻》等---【经典动画】",
+                "Hiromasa Yonebayashi - 代表作品为《借物少女艾莉緹》",
+                "Kazuo Oga - 代表作品为《魔女宅急便》等","Naoko Yamada - 代表作品为《声之形》、《春物》等",
+                "Takahiro Kimura - 代表作品为《Code Geass 反叛的鲁路修》等",
+                "Masashi Kishimoto - 代表作品为《火影忍者》等",
+                "Walt Disney - 代表作品为《白雪公主与七个小矮人》等",
+                "John Lasseter - 代表作品为《海底总动员》等---【皮克斯经典】",
+                "Tim Burton - 代表作品为《魔发奇缘》等",
+                "Glen Keane - 代表作品为《美女与野兽》等---【经典迪士尼】",
+                "Genndy Tartakovsky - 代表作品为《星球大战：克隆人战争》等",
+                "Chuck Jones - 代表作品为《汤姆猫和杰瑞鼠》等",
+                "Isao Takahata - 代表作品为《火垂るの墓》"
+            ], value=" - 无", elem_id=self.elem_id("xtf"))
+            rtf = gr.Dropdown(label="选择时代背景（预设）", choices=[
+                " - 无",
+                "Middle Ages - 中世纪",
+                "Renaissance - 文艺复兴",
+                "Meiji Period - 日本明治時代",
+                "Industrial Revolution - 工业革命",
+                "Edo Period - 日本江戸時代", "Cold War era - 冷战时期",
+                "Song Dynasty - 中华宋朝", "modern - 21世纪（现代）",
+                "Warring States Period - 中华战国时期","Bronze Age - 青铜时代",
+                "Classical Antiquity - 古典时代",
+                "Ancient Egypt - 古埃及",
+                "Tang Dynasty - 中华唐朝", "Gothic Period - 哥特式时期",
+                "Ming Dynasty - 中华明朝",  "Diesel Punk - 柴油朋克时代",
+                "Steampunk - 蒸汽朋克时代", "Cyberpunk - 赛博朋克时代", ], value=" - 无", elem_id=self.elem_id("rtf"))
  
         with gr.Row():
             rttx = gr.Slider(minimum=-1, maximum = 999, step=1, label='种子值[调整数据匹配，-1随机]', value=333, elem_id=self.elem_id("rttx")) 
@@ -20699,9 +20800,9 @@ class Script(scripts.Script):
             CX4 = gr.Checkbox(label="随机动作【每个图随机动作】", value=False,display="inline", elem_id=self.elem_id("CX4"))
             CX5 = gr.Checkbox(label="随机朝向【每个图随机朝向】", value=False,display="inline", elem_id=self.elem_id("CX5"))
         with gr.Row():
-            CX6 = gr.Checkbox(label="随机场景【每个图随机场景】", value=False,display="inline", elem_id=self.elem_id("CX5"))
-            CX7 = gr.Checkbox(label="随机服装【每个图随机服装】", value=False,display="inline", elem_id=self.elem_id("CX5"))
-            CX8 = gr.Checkbox(label="随机构图【每个图随机构图】", value=False,display="inline", elem_id=self.elem_id("CX5"))
+            CX6 = gr.Checkbox(label="随机场景【每个图随机场景】", value=False,display="inline", elem_id=self.elem_id("CX6"))
+            CX7 = gr.Checkbox(label="随机服装【每个图随机服装】", value=False,display="inline", elem_id=self.elem_id("CX7"))
+            CX8 = gr.Checkbox(label="随机构图【每个图随机构图】", value=False,display="inline", elem_id=self.elem_id("CX8"))
             
         tttr = gr.Slider(minimum=-6, maximum = 6, step=1, label='画面气氛【左边恐怖阴暗，右边明亮乐观】', value=0, elem_id=self.elem_id("tttr"))
         
@@ -20763,45 +20864,48 @@ class Script(scripts.Script):
        
     def run(self, p, PTX: str,style_txt: str, flow_text: str, ow_text: str, DFQ: str, KX1: float,KX2: float,KX3: float,rttx: int,Btx: int,TTX: int,CX1: bool,CXt: bool,CX2: bool,CX3: bool,CX4: bool,CX5: bool,CX6: bool,CX7: bool,CX8: bool,MXT: int,QXT: int,fast: int,ttm: int,tttr: int,cccrf: int,rexx: int,ree1: int, ree2: int,  txtt: int,xtf:str,rtf:str,CXx: bool,RT: bool,  M1: str, M2: str, M3: str, M4: str, M5: str, M6: str, QQF: str,CXXF: int,AF: int,RQ: int,QC: str,WC: str):
         global ppt, dddf,cqqff,pccc,tku
-        
-        
-        qdf = f",{PTX}," 
+        global ppt, dddf, cqqff, pccc, tku
+
+        # 剧本原文
+        qdf = f",{PTX},"
         tku = CXXF + random.randint(-AF, AF)
-        
+
+        # 自动分割
         if CXx:
-            qdf = fgg(qdf, max_length = tku)  
+            qdf = fgg(qdf, max_length=tku)
             lines = qdf
-        else:   
+        else:
+            # 废句
             qdf = qdf.split(',')
-            lines = [x.strip() for x in qdf if x.strip()]   
-        
+            lines = [x.strip() for x in qdf if x.strip()]
+
         if not CXx:
-            lines = [x.strip() for x in PTX.split('\n') if x.strip()]   
-            
+            lines = [x.strip() for x in PTX.split('\n') if x.strip()]
+
+            # 单图模式
         if RT:
-           lines = PTX.split('#') if '#' in PTX else [PTX]
-           lines = [x.strip() for x in lines if x.strip()]
-           
-            
+            lines = PTX.split('#') if '#' in PTX else [PTX]
+            lines = [x.strip() for x in lines if x.strip()]
+
         lines = [x for x in lines if len(x) > 0] 
-        p.do_not_save_grid = True 
+        p.do_not_save_grid = True
+        # 调整词 会加在提示词最后
         ppt = f"{style_txt}"
-        dddf = f"{flow_text}" 
+        dddf = f"{flow_text}"
         mtt = f"{ow_text}"
-        c1= f"{M1},"
-        c2= f"{M2},"
-        c3= f"{M3},"
-        c4= f"{M4},"
-        c5= f"{M5},"
-        c6= f"{M6},"
+        # 主角1
+        c1 = f"{M1},"
+        c2 = f"{M2},"
+        c3 = f"{M3},"
+        c4 = f"{M4},"
+        c5 = f"{M5},"
+        c6 = f"{M6},"
 
         job_count = 0
         jobs = []
-        jobs = []
-        job_count = 0
         
  
-        ddc = '('+ get_name(rtf) +')'
+        ddc = '(' + get_name(rtf) + ')'
    
         global ooo 
         if any("hair" in c.lower() for c in [fy(c1), fy(c2), fy(c3), fy(c4), fy(c5), fy(c6)]):
@@ -20809,28 +20913,32 @@ class Script(scripts.Script):
 
         ggg = ""
         ggg = rcg(ggg)
-        
-        t1 = '('+ fy(mtt)+':'+ str(KX1) +')'
-        t2 = '('+ fy(ppt)+':'+ str(KX2) +')'
-        t3 = '('+ fy(dddf)+':'+ str(KX3) +')'
-        
+
+        t1 = '(' + fy(mtt) + ':' + str(KX1) + ')'
+        t2 = '(' + fy(ppt) + ':' + str(KX2) + ')'
+        t3 = '(' + fy(dddf) + ':' + str(KX3) + ')'
+
         if mtt == "":
-                t1 = ""
+            t1 = ""
         if ppt == "":
-                t2 = ""
+            t2 = ""
         if dddf == "":
-                t3 = ""
-       
-        cccccc =  t1 + t2 + t3      
-        global dfg,qqff,qqff2
-        lines = lines * QXT 
+            t3 = ""
+
+        cccccc = t1 + t2 + t3
+        global dfg, qqff, qqff2
+        lines = lines * QXT
         
         for line in lines:
-            ggg =   '(' + get_name(xtf) + ')'  + fttr(QQF)  + '('+line + ')'  + ddc + ooo
-            args = {"prompt":   ggg + tttrt(tttr) + mrrtt(cccrf) + ddd(fast) + qqq(ttm) + ttxq(txtt) + ffffw(TTX)} 
+            # 画风 + 输出模式 + 剧本 + 时代背景
+            ggg = '(' + get_name(xtf) + ')' + ',' + fttr(QQF) + ',' + line + ',' + ddc + ',' + ooo
+            # 基础提示词 + 恐怖程度 + 距离 + 速度强度 + 写实程度【往左边是卡通，往右边是写实】 + 透视强度【鱼眼镜头】 + 快速测试用
+            args = {
+                "prompt": ggg + ',' + tttrt(tttr) + ',' + mrrtt(cccrf) + ',' + ddd(fast) + ',' + qqq(ttm) + ',' + ttxq(
+                    txtt) + ',' + ffffw(TTX) + ','}
             args["batch_size"] = MXT
             args["negative_prompt"] = RQ
-            job_count += args.get("n_iter", p.n_iter)
+            job_count += args.get("n_iter", 1)
             jobs.append(args)
 
         print(f"准备 处理 {len(lines)} 行 在 {job_count} 任务列表，整个任务开始."  )
@@ -20844,6 +20952,7 @@ class Script(scripts.Script):
         infotexts = []
         for n, args in enumerate(jobs):
             state.job = f"{state.job_no + 1} out of {state.job_count}"
+            # 随机出图
             if CX1:
                 args["prompt"] = args["prompt"] +","+"(("+random.choice(cccctt.split(","))+"))"
             if CXt:
@@ -20863,39 +20972,48 @@ class Script(scripts.Script):
             if CX8:
                 args["prompt"] = args["prompt"] +","+ "(("+random.choice(mqfd8.split(","))+"))"
 
-                
-            args["prompt"] = kkkk(args["prompt"],dard(dqr(fy(c2))) +","+ dard(dqr(fy(c1))) +","+ dard(dqr(fy(c4))) +","+ dard(dqr(fy(c5)))+","+ dard(dqr(fy(c6)))+","+ dard(dqr(fy(c3))))
-            if mccss(qqta):
-                for i in range(9):
-                    tfgh(ffffrf(dcc))
-                    args["prompt"] = dacccc(args["prompt"])  
+                # 对 prompt 进行字符串替换 但是应该有bug
+                args["prompt"] = kkkk(args["prompt"],
+                                      dard(dqr(fy(c2))) + "," + dard(dqr(fy(c1))) + "," + dard(
+                                          dqr(fy(c4))) + "," + dard(dqr(fy(c5))) + "," + dard(dqr(fy(c6))) + "," + dard(dqr(fy(c3))))
                     
             args["prompt"] = fy(args["prompt"]) 
-            
+
+            # 没看懂 一会儿再看看
             args["prompt"] = pcpr(c1,args["prompt"])
             args["prompt"] = pcpr(c2,args["prompt"])
             args["prompt"] = pcpr(c3,args["prompt"])
             args["prompt"] = pcpr(c4,args["prompt"])
             args["prompt"] = pcpr(c5,args["prompt"])
             args["prompt"] = pcpr(c6,args["prompt"])
- 
+
+            # 去掉中文
             args["prompt"] = rcccc(args["prompt"])
-            if rccqs(gggq):
-                cqqff = "E --------- "
-                args["prompt"] = daf(args["prompt"])
-                qqff = ""
-                
-            args["prompt"] = dada(args["prompt"])   
-            args["prompt"] = kkcsq(args["prompt"])  
-            args["prompt"] = qsf(args["prompt"])
+            # if rccqs(gggq):
+            #     cqqff = "E --------- "
+            #     args["prompt"] = daf(args["prompt"])
+            #     qqff = ""
+
+            # 有几个人
+            args["prompt"] = dada(args["prompt"])
+            # 调整词
+            args["prompt"] = args["prompt"] + ',' + cccccc
+            # 去掉空括号
+            args["prompt"] = kkcsq(args["prompt"])
+            # 合并逗号 去除空格
+            # args["prompt"] = qsf(args["prompt"])
+            # 去除重复单词
             args["prompt"] = reeee(args["prompt"])
-            args["prompt"] =  args["prompt"] +  cccccc
-            ddrq = args["prompt"]  
-            ddrq=  re.sub(r'[“\'][^”\']*?[”\']', '', ddrq.lower(), flags=re.I)   
-            args["prompt"] = ddrq + DFQ + ddq(QC) + dqqr(WC)
+            ddrq = args["prompt"]
+            ddrq = re.sub(r'[“\'][^”\']*?[”\']', '', ddrq, flags=re.I)
+            # 全局lora 模糊  色彩
+            args["prompt"] = ddrq + ',' + DFQ + ',' + ddq(QC) + ',' + dqqr(WC)
             args["prompt"] = aaaaq(args["prompt"])
-            args["prompt"] = ppet(rexx) +ppetw(ree1) + ppeta(ree2) + gttr(Btx) + loratt(args["prompt"])
-           # print(args["prompt"])
+            args["prompt"] = ppet(rexx) + ',' + ppetw(ree1) + ',' + ppeta(ree2) + ',' + gttr(Btx) + ',' + loratt(
+                args["prompt"])
+            # 合并逗号 去除空格
+            args["prompt"] = qsf(args["prompt"])
+            print(args["prompt"])
             print(cqqff + "-----准备开始处理任务：",n+1)
 
             copy_p = copy.copy(p)   
@@ -20904,11 +21022,10 @@ class Script(scripts.Script):
             proc = process_images(copy_p)
             images += proc.images
 
-            tfgh(gggf(mccqdc))
-            if dqqqcs(gggq):
-                for i in range(8):
-                    tfgh(ffffrf(dcc))
           
-        return Processed(p, images, p.seed, "", all_prompts=all_prompts, infotexts=infotexts)    
+        return Processed(p, images, p.seed, "", all_prompts=all_prompts, infotexts=infotexts)
+
+
+
     
    
